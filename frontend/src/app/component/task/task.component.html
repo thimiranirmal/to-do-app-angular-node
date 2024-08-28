@@ -1,0 +1,46 @@
+
+
+<div class="container my-5">
+  <h2 class="text-center mb-4">My Tasks</h2>
+    <!-- Button trigger modal -->
+    
+
+    
+  <!-- Task List -->
+  <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="bi bi-plus-circle"></i>
+        </button>
+          <!-- Task Card -->
+          <div class="card mb-3">
+              <div class="card-body">
+                @for(item of taskList; track item){              
+                  <h5 class="card-title">{{item.title}}</h5>
+                  <div class="d-flex justify-content-between">
+                      <span class="badge bg-success">Completed</span>
+                      <button class="btn btn-primary btn-sm">Edit</button>
+                  </div>
+
+                }
+              </div>
+          </div>
+
+          
+
+      </div>
+  </div>
+</div>
+
+
+
+<div class="task-container">
+
+  <!-- Add Task Form -->
+  <div class="task-form">
+    <input type="text" *ngModel="newTask.title" placeholder="Task Title" required />
+    
+    <button (click)="addTask()">Add Task</button>
+  </div>
+
+  
